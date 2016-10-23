@@ -235,7 +235,8 @@ namespace XamDialogs
 			: base ()
 		{
 			var actualBoxHeight = 155.0f;
-			var window = UIApplication.SharedApplication.Windows [0];
+			var window = UIApplication.SharedApplication.Windows[UIApplication.SharedApplication.Windows.Length - 1];
+
 			var allFrame = window.Frame;
 
 			var boxFrame = new CGRect (0, 0, Math.Min (325, window.Frame.Size.Width - 50), actualBoxHeight);
@@ -308,10 +309,8 @@ namespace XamDialogs
 		/// </summary>
 		public void Show ()
 		{
-			var window = UIApplication.SharedApplication.Windows [0];
-
+			var window = UIApplication.SharedApplication.Windows[UIApplication.SharedApplication.Windows.Length - 1];
 			Show (window);
-		
 		}
 
 		/// <summary>
@@ -537,7 +536,9 @@ namespace XamDialogs
 
 			this.ActualBox.Center = this.Center;
 
-			var window = UIApplication.SharedApplication.Windows [0];
+
+			var window = UIApplication.SharedApplication.Windows[UIApplication.SharedApplication.Windows.Length - 1];
+
 
 			mBackingView = new UIView (window.Bounds);
 
@@ -647,7 +648,7 @@ namespace XamDialogs
 		private void ResetFrame (Boolean animated)
 		{
 
-			var window = UIApplication.SharedApplication.Windows [0];
+			var window = UIApplication.SharedApplication.Windows[UIApplication.SharedApplication.Windows.Length - 1];
 
 			this.Frame = window.Frame;
 
