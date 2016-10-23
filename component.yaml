@@ -20,12 +20,12 @@ details: component/Details.md
 screenshots: 
   - component/screenshots/Screen1.png
 getting-started: component/GettingStarted.md
-version: 1.0
+version: 1.1
 samples: 
   - path: samples/XamDialogsSample.sln
     name: iOS Sample
     nobuild: "true"
     configuration: Release|iPhone
 packages:
-  ios-unified: xamdialogs, Version=1.0.0.1
+  ios-unified: xamdialogs, Version=1.1.0
 is_shell: true
