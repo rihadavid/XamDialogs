@@ -310,6 +310,12 @@ namespace XamDialogs
 		public void Show ()
 		{
 			var window = UIApplication.SharedApplication.Windows[UIApplication.SharedApplication.Windows.Length - 1];
+
+			/* If the topmost window is "UIRemoteKeyboardWindow" (happens e.g. on iOS 10.0 simulator), the dialog would be invisible (but still clickable).
+			To prevent this, switch to KeyWindow and the dialog will be ok (visible and clickable). */
+			if (!string.IsNullOrEmpty(window.Description) && window.Description.Contains("UIRemoteKeyboardWindow"))
+				window = UIApplication.SharedApplication.KeyWindow;
+		
 			Show (window);
 		}
 
